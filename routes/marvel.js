@@ -4,7 +4,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Marvel = require('../models/marvel');
 
-router.get('/',(req,res,next)=>{
+router.get('/comic',(req,res,next)=>{
   Marvel.find({},(err, datos)=>{
     if(err) res.status(500).json({error:"Error en la consulta"});
     if(datos) res.status(200).json(datos);
