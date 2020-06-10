@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/marvel/api',marvelRouter);
+app.use('/marvel/api/comic',marvelRouter);
 app.use('/front/marvel',frontMarvelRouter);
 
 // catch 404 and forward to error handler
