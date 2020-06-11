@@ -11,7 +11,7 @@ app.set('port', process.env.PORT || '3000');
 router.get('/listar',(req,res,next) => {
   var url = req.protocol + '://' + req.hostname +'/marvel/api/comic'
   var urlLocal = req.protocol + '://' + req.hostname + ":" + app.get('port') + '/marvel/api/comic'
-  if (urlLocal === "http://localhost:3000/marvel/api/comic"){
+  if (urlLocal === "http://localhost:"+app.get('port')+"/marvel/api/comic"){
   request.get(urlLocal , (err,response,body)=>{
     if(err) res.status(404).json({mensaje:url});
     else res.render('comic_view',{'datos': JSON.parse(body) });
